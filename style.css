@@ -78,7 +78,7 @@ a {
     letter-spacing: 0%;
     background: white;
     border-radius: 999px;
-    transition: .2s all ease-in-out;
+    transition: .3s all ease-in-out;
 }
 .btn-download-link:hover{
     transform: translateY(3px);
