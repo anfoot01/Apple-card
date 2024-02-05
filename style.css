@@ -1,7 +1,17 @@
+html,
 body {
+    min-height: 100%;
+}
+
+body {
+    padding: 40px;
     background: linear-gradient(134.71deg, rgb(252, 63, 95) 0%, rgb(125, 97, 255) 100.346%);
     font-family: "Poppins", sans-serif;
-    padding: 40px;
+
+}
+
+* {
+    box-sizing: border-box;
 }
 
 a {
@@ -15,8 +25,7 @@ a {
     max-width: 1410px;
     width: 100%;
     margin-inline: auto;
-    margin-top:40px;
-    margin-bottom: 40px;
+
 }
 
 .header {
@@ -28,7 +37,7 @@ a {
 }
 
 .header-logo,
-.header-btn{
+.header-btn {
     min-width: 185px;
 }
 
@@ -44,8 +53,12 @@ a {
     font-size: 14px;
     font-weight: 300;
     line-height: 21px;
+    transition: .2s all ease-in-out;
 }
-
+.header-nav-link:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
 .header-btn {
     display: flex;
     justify-content: flex-end;
@@ -65,6 +78,21 @@ a {
     letter-spacing: 0%;
     background: white;
     border-radius: 999px;
+    transition: .2s all ease-in-out;
+}
+.btn-download-link:hover{
+    transform: translateY(3px);
+}
+.header-menu {
+    display: none;
+}
+
+.header-menu .material-icons {
+    color: white;
+}
+
+.header-menu .material-icons {
+    display: flex;
 }
 
 .main {
@@ -79,7 +107,7 @@ a {
     font-family: Poppins;
     font-size: 72px;
     font-weight: 400;
-    line-height: 108px;
+
     letter-spacing: 0%;
     margin-bottom: 32px;
 }
@@ -119,4 +147,84 @@ a {
     align-items: center;
     gap: 32px;
     justify-content: center;
+}
+#headerIcon{
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    .header-btn {
+        display: none;
+    }
+
+    body {
+        padding: 30px;
+    }
+
+    .main {
+        padding: 20px 50px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .header {
+        padding: 16px;
+    }
+
+    .desc {
+        margin-bottom: 40px;
+    }
+
+    .loader {
+        margin-top: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-nav {
+        position: fixed;
+        width: 70%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgb(0 0 0 / 80%);
+        flex-direction: column;
+        align-items: center;
+        transition: 0.2s all ease-in-out;
+        transform: translateX(-120%);
+
+    }
+    
+    #headerIcon:checked~.header-nav {
+        transform: translateX(0);
+    }
+    .header-btn{
+        display: flex;
+      
+       transition: 0.35s all ease-in-out;
+       position: fixed;
+       bottom: 20px;
+       left: calc(50% - 15%);
+       transform: translateX(-50%) scale(0);
+    }
+    #headerIcon:checked~.header-btn {
+        transform: translateX(-50%) scale(1);
+       
+    }
+    .header-menu {
+        display: flex;
+    }
+
+    .header-nav-link {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    body,
+    .header {
+        padding: 20px;
+    }
 }
